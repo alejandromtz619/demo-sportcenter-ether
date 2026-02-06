@@ -1,0 +1,155 @@
+{
+  "identity": {
+    "name": "Complejo Sport Center",
+    "tone": "Elite, High-Performance, Night-Life, Luxury",
+    "mission": "Transform court booking into a premium experience. No more boring spreadsheets."
+  },
+  "typography": {
+    "primary_font": "Oswald, sans-serif",
+    "secondary_font": "Manrope, sans-serif",
+    "font_urls": [
+      "https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+    ],
+    "weights": {
+      "heading": "500",
+      "body": "400",
+      "bold": "700"
+    },
+    "rules": {
+      "headings": "Uppercase, tracking-widest, tight leading. Use for 'COURT 1', 'BOOK NOW'.",
+      "body": "Clean, high legibility. Use for time slots and descriptions."
+    }
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": "#050505",
+      "surface": "#121212",
+      "surface_highlight": "#1E1E1E",
+      "primary": "#CCFF00",
+      "primary_foreground": "#000000",
+      "secondary": "#FFFFFF",
+      "secondary_foreground": "#000000",
+      "accent": "#CCFF00",
+      "muted": "#27272A",
+      "muted_foreground": "#A1A1AA",
+      "border": "#27272A",
+      "destructive": "#FF453A",
+      "success": "#39FF14"
+    },
+    "gradients": {
+      "hero_glow": "radial-gradient(circle at center, rgba(204, 255, 0, 0.15) 0%, rgba(5, 5, 5, 0) 70%)",
+      "card_hover": "linear-gradient(45deg, rgba(204, 255, 0, 0.05), transparent)"
+    }
+  },
+  "components": {
+    "buttons": {
+      "style": "sharp",
+      "radius": "0px",
+      "hover_effect": "glow_neon",
+      "classes": "uppercase tracking-wider font-oswald font-bold transition-all duration-300 hover:shadow-[0_0_20px_rgba(204,255,0,0.4)] hover:bg-[#CCFF00] hover:text-black"
+    },
+    "cards": {
+      "style": "glass_panel",
+      "background": "bg-[#121212]/80 backdrop-blur-md",
+      "border": "border border-white/10 hover:border-[#CCFF00]/50 transition-colors duration-300",
+      "radius": "rounded-none"
+    },
+    "inputs": {
+      "style": "minimal_underlined",
+      "background": "bg-transparent",
+      "border": "border-b border-white/20 focus:border-[#CCFF00]",
+      "radius": "rounded-none"
+    }
+  },
+  "layout_strategies": {
+    "container_max_width": "max-w-7xl",
+    "grid_system": {
+      "catalog": "bento_grid",
+      "dashboard": "high_density_grid"
+    },
+    "spacing": {
+      "section_padding": "py-24",
+      "element_gap": "gap-8"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero": {
+        "url": "https://images.unsplash.com/photo-1676655079738-af54dfd6318e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxhdGhsZXRlJTIwc2lsaG91ZXR0ZSUyMGRhcmslMjBneW18ZW58MHx8fHwxNzcwNDE5NzQ1fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Dramatic athlete silhouette",
+        "category": "hero"
+      },
+      "courts": {
+        "padel_1": {
+          "url": "https://images.unsplash.com/photo-1646649853703-7645147474ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHxwYWRlbCUyMGNvdXJ0fGVufDB8fHx8MTc3MDQxOTc0M3ww&ixlib=rb-4.1.0&q=85",
+          "name": "Padel Court Central",
+          "alt": "Blue padel court with rackets"
+        },
+        "padel_2": {
+          "url": "https://images.unsplash.com/photo-1658491830143-72808ca237e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHw0fHxwYWRlbCUyMGNvdXJ0fGVufDB8fHx8MTc3MDQxOTc0M3ww&ixlib=rb-4.1.0&q=85",
+          "name": "Padel Court VIP",
+          "alt": "Blue court surface detail"
+        },
+        "padel_3": {
+          "url": "https://images.unsplash.com/photo-1689942963385-f5bd03f3b270?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxwYWRlbCUyMGNvdXJ0fGVufDB8fHx8MTc3MDQxOTc0M3ww&ixlib=rb-4.1.0&q=85",
+          "name": "Padel Court Pro",
+          "alt": "Tennis court wide angle"
+        },
+        "tennis": {
+          "url": "https://images.unsplash.com/photo-1617144520113-88ae706a86eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHx0ZW5uaXMlMjBjb3VydCUyMGJsdWUlMjBoYXJkJTIwY291cnQlMjBuaWdodCUyMGxpZ2h0c3xlbnwwfHx8fDE3NzA0MTk3MzV8MA&ixlib=rb-4.1.0&q=85",
+          "name": "Grand Slam Court",
+          "alt": "Blue and white tennis track"
+        },
+        "beach_tennis": {
+          "url": "https://images.pexels.com/photos/4330940/pexels-photo-4330940.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          "name": "Beach Arena",
+          "alt": "Night beach volleyball/tennis"
+        },
+        "futsal_1": {
+          "url": "https://images.unsplash.com/photo-1712325485668-6b6830ba814e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxpbmRvb3IlMjBzb2NjZXIlMjBjb3VydHxlbnwwfHx8fDE3NzA0MTk3NDV8MA&ixlib=rb-4.1.0&q=85",
+          "name": "Futsal Indoor A",
+          "alt": "Blue and red indoor court"
+        },
+        "futsal_2": {
+          "url": "https://images.unsplash.com/photo-1763775468707-573c7cd6b0da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwyfHxpbmRvb3IlMjBzb2NjZXIlMjBjb3VydHxlbnwwfHx8fDE3NzA0MTk3NDV8MA&ixlib=rb-4.1.0&q=85",
+          "name": "Futsal Indoor B",
+          "alt": "Player with soccer ball"
+        },
+        "grass": {
+          "url": "https://images.unsplash.com/photo-1768861171882-9bbfed55b6f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxzb2NjZXIlMjBmaWVsZCUyMGdyYXNzJTIwbmlnaHQlMjBzdGFkaXVtJTIwbGlnaHRzfGVufDB8fHx8MTc3MDQxOTczN3ww&ixlib=rb-4.1.0&q=85",
+          "name": "Stadium Field",
+          "alt": "Illuminated grass field night"
+        }
+      }
+    },
+    "icons": "lucide-react"
+  },
+  "universal_guidelines": {
+    "general": [
+      "Use 'Oswald' for all headings and 'Manrope' for body text.",
+      "NEVER use gradients on text. Keep text sharp white or neon green.",
+      "Use massive spacing (py-24) between sections.",
+      "Interactive elements (courts, time slots) must have a :hover state that glows neon.",
+      "Dashboard must be dense but legible. Use card borders to separate data, not backgrounds."
+    ],
+    "components": [
+      "Buttons: Sharp corners (rounded-none).",
+      "Cards: Glassmorphism (bg-black/40 backdrop-blur-md border-white/10).",
+      "Modals: Dark overlay with blur (backdrop-blur-sm).",
+      "Toasts: Use Sonner with dark theme."
+    ],
+    "accessibility": [
+      "Ensure neon green text is only used on very dark backgrounds.",
+      "All interactive elements must have data-testid."
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. Setup Tailwind Colors: Update tailwind.config.js with the provided palette. Add 'oswald' and 'manrope' to font families.",
+    "2. Fonts: Import fonts in index.css from Google Fonts.",
+    "3. Seed Data: Create a 'courts' array in a constants file using the provided image URLs and names.",
+    "4. Components: Customize Shadcn components to remove rounded corners (rounded-none) and add the neon border hover effect.",
+    "5. Layout: Implement the 'Bento Grid' for the Court Catalog page.",
+    "6. Dashboard: Create a layout with a sidebar (collapsible) and a dense grid for stats."
+  ]
+}
