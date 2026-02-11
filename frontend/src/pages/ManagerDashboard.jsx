@@ -114,9 +114,9 @@ const ManagerDashboard = () => {
   }));
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-AR', {
+    return new Intl.NumberFormat('es-PY', {
       style: 'currency',
-      currency: 'ARS',
+      currency: 'PYG',
       minimumFractionDigits: 0
     }).format(price);
   };

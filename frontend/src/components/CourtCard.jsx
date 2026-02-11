@@ -13,9 +13,9 @@ const COURT_TYPE_LABELS = {
 
 const CourtCard = ({ court, variant = 'default' }) => {
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-AR', {
+    return new Intl.NumberFormat('es-PY', {
       style: 'currency',
-      currency: 'ARS',
+      currency: 'PYG',
       minimumFractionDigits: 0
     }).format(price);
   };

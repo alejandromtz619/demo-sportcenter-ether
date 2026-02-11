@@ -31,13 +31,13 @@ export const DURATION_BY_TYPE = {
   cesped: [60, 90, 120]
 };
 
-// Price per hour by court type
+// Price per hour by court type (in Guaraníes)
 export const PRICE_BY_TYPE = {
-  padel: 2500,
-  tenis: 3000,
-  beach_tenis: 2800,
-  futsal: 4500,
-  cesped: 6000
+  padel: 100000,
+  tenis: 120000,
+  beach_tenis: 110000,
+  futsal: 180000,
+  cesped: 250000
 };
 
 export const courts = [
@@ -50,7 +50,7 @@ export const courts = [
     features: ['Iluminación LED', 'Césped sintético pro', 'Cristal templado', 'Climatizada'],
     rating: 4.8,
     totalReviews: 45,
-    pricePerHour: 2500,
+    pricePerHour: 100000,
     available: true
   },
   {
@@ -62,7 +62,7 @@ export const courts = [
     features: ['Vestuario privado', 'Bebidas incluidas', 'Toallas premium', 'Aire acondicionado'],
     rating: 4.9,
     totalReviews: 38,
-    pricePerHour: 3500,
+    pricePerHour: 140000,
     available: true
   },
   {
@@ -74,7 +74,7 @@ export const courts = [
     features: ['Sistema de grabación', 'Análisis de juego', 'Entrenador disponible', 'Equipamiento pro'],
     rating: 4.7,
     totalReviews: 52,
-    pricePerHour: 2800,
+    pricePerHour: 112000,
     available: true
   },
   {
@@ -86,7 +86,7 @@ export const courts = [
     features: ['Superficie dura', 'Dimensiones ATP', 'Iluminación nocturna', 'Tribunas'],
     rating: 4.9,
     totalReviews: 67,
-    pricePerHour: 3000,
+    pricePerHour: 120000,
     available: true
   },
   {
@@ -98,7 +98,7 @@ export const courts = [
     features: ['Arena importada', 'Música ambiente', 'Bar integrado', 'Duchas exteriores'],
     rating: 4.6,
     totalReviews: 34,
-    pricePerHour: 2800,
+    pricePerHour: 110000,
     available: true
   },
   {
@@ -110,7 +110,7 @@ export const courts = [
     features: ['Piso poliuretano', 'Arcos profesionales', 'Marcador digital', 'Vestuarios'],
     rating: 4.5,
     totalReviews: 89,
-    pricePerHour: 4500,
+    pricePerHour: 180000,
     available: true
   },
   {
@@ -122,7 +122,7 @@ export const courts = [
     features: ['Entrenamiento', 'Partidos amistosos', 'Pelotas incluidas', 'Cronómetro'],
     rating: 4.4,
     totalReviews: 56,
-    pricePerHour: 4000,
+    pricePerHour: 160000,
     available: true
   },
   {
@@ -134,7 +134,7 @@ export const courts = [
     features: ['Césped natural', 'Fútbol 7', 'Iluminación estadio', 'Eventos especiales'],
     rating: 4.8,
     totalReviews: 42,
-    pricePerHour: 6000,
+    pricePerHour: 250000,
     available: true
   }
 ];
@@ -165,7 +165,7 @@ export const initialBookings = [
     startTime: '10:00',
     duration: 90,
     status: BOOKING_STATUS.CONFIRMED,
-    totalPrice: 3750,
+    totalPrice: 150000,
     createdAt: '2026-01-10T14:30:00Z'
   },
   {
@@ -179,7 +179,7 @@ export const initialBookings = [
     startTime: '14:00',
     duration: 60,
     status: BOOKING_STATUS.DEPOSIT,
-    totalPrice: 3000,
+    totalPrice: 120000,
     createdAt: '2026-01-11T09:15:00Z'
   },
   {
@@ -193,7 +193,7 @@ export const initialBookings = [
     startTime: '18:00',
     duration: 120,
     status: BOOKING_STATUS.REQUESTED,
-    totalPrice: 9000,
+    totalPrice: 360000,
     createdAt: '2026-01-12T16:45:00Z'
   },
   {
@@ -207,7 +207,7 @@ export const initialBookings = [
     startTime: '09:00',
     duration: 90,
     status: BOOKING_STATUS.FINISHED,
-    totalPrice: 5250,
+    totalPrice: 210000,
     createdAt: '2026-01-08T11:20:00Z'
   },
   {
@@ -221,7 +221,7 @@ export const initialBookings = [
     startTime: '16:00',
     duration: 120,
     status: BOOKING_STATUS.CONFIRMED,
-    totalPrice: 12000,
+    totalPrice: 500000,
     createdAt: '2026-01-13T10:00:00Z'
   },
   {
@@ -235,7 +235,7 @@ export const initialBookings = [
     startTime: '11:00',
     duration: 60,
     status: BOOKING_STATUS.DEPOSIT,
-    totalPrice: 2800,
+    totalPrice: 110000,
     createdAt: '2026-01-11T15:30:00Z'
   },
   {
@@ -249,7 +249,7 @@ export const initialBookings = [
     startTime: '20:00',
     duration: 90,
     status: BOOKING_STATUS.FINISHED,
-    totalPrice: 4200,
+    totalPrice: 168000,
     createdAt: '2026-01-07T18:00:00Z'
   },
   {
@@ -263,7 +263,7 @@ export const initialBookings = [
     startTime: '19:00',
     duration: 60,
     status: BOOKING_STATUS.REQUESTED,
-    totalPrice: 4000,
+    totalPrice: 160000,
     createdAt: '2026-01-14T12:00:00Z'
   }
 ];
