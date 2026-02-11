@@ -20,6 +20,10 @@ const CourtCard = ({ court, variant = 'default' }) => {
     }).format(price);
   };
 
+  const handleImageLoad = (e) => {
+    e.target.classList.add('loaded');
+  };
+
   if (variant === 'featured') {
     return (
       <Link
@@ -31,7 +35,7 @@ const CourtCard = ({ court, variant = 'default' }) => {
           <img
             src={court.image}
             alt={court.name}
-            loading="lazy"
+            onLoad={handleImageLoad}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
@@ -79,6 +83,7 @@ const CourtCard = ({ court, variant = 'default' }) => {
           src={court.image}
           alt={court.name}
           loading="lazy"
+          onLoad={handleImageLoad}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />

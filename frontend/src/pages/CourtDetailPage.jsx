@@ -43,6 +43,7 @@ const COURT_TYPE_LABELS = {
 };
 
 const CourtDetailPage = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const { courtId } = useParams();
   const navigate = useNavigate();
   const { currentUser, bookings, addBooking, getCourtReviews, addReview } = useApp();
@@ -175,12 +176,14 @@ const CourtDetailPage = () => {
       </div>
 
       {/* Hero Image */}
-      <div className="relative h-[40vh] lg:h-[50vh]">
+      <div className="relative h-[40vh] lg:h-[50vh] bg-surface/30">
         <img
           src={court.image}
           alt={court.name}
-          loading="eager"
-          className="w-full h-full object-cover"
+          onLoad={() => setImageLoaded(true)}
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
         

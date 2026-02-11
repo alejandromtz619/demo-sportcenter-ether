@@ -80,6 +80,42 @@
     z-index: 100 !important;
 }
 
+/* Image loading optimization */
+img {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded,
+img.loaded {
+    opacity: 1;
+}
+
+/* Skeleton loading for images */
+.image-skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 25%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.05) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 /* Dialog overlay */
 [data-radix-dialog-overlay] {
     background-color: rgba(0, 0, 0, 0.8);

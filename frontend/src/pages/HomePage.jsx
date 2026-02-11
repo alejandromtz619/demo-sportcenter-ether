@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Calendar, Users, Trophy, Zap } from 'lucide-react';
 import { Button } from '../components/ui/button';
@@ -6,6 +6,7 @@ import CourtCard from '../components/CourtCard';
 import { courts } from '../data/seedData';
 
 const HomePage = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const featuredCourt = courts[0];
   const topCourts = courts.slice(1, 5);
 
@@ -43,8 +44,10 @@ const HomePage = () => {
           <img
             src="https://images.unsplash.com/photo-1676655079738-af54dfd6318e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxhdGhsZXRlJTIwc2lsaG91ZXR0ZSUyMGRhcmslMjBneW18ZW58MHx8fHwxNzcwNDE5NzQ1fDA&ixlib=rb-4.1.0&q=85"
             alt="Hero background"
-            loading="eager"
-            className="w-full h-full object-cover opacity-40"
+            onLoad={() => setImageLoaded(true)}
+            className={`w-full h-full object-cover opacity-40 transition-opacity duration-500 ${
+              imageLoaded ? 'opacity-40' : 'opacity-0'
+            }`}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
           <div className="absolute inset-0 hero-glow" />

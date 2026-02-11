@@ -88,11 +88,12 @@ const ClientHistoryPage = () => {
       >
         <div className="flex flex-col md:flex-row">
           {/* Court Image */}
-          <div className="relative w-full md:w-48 h-32 md:h-auto">
+          <div className="relative w-full md:w-48 h-32 md:h-auto bg-surface/30">
             <img
               src={getCourtImage(booking.courtId)}
               alt={booking.courtName}
               loading="lazy"
+              onLoad={(e) => e.target.classList.add('loaded')}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/80 md:hidden" />
