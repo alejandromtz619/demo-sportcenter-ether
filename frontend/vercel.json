@@ -1,7 +1,11 @@
 {
-  "buildCommand": "npm install ajv@6.12.6 ajv-keywords@3.5.2 && npm run build",
+  "buildCommand": "DISABLE_ESLINT_PLUGIN=true npm install ajv@6.12.6 ajv-keywords@3.5.2 && DISABLE_ESLINT_PLUGIN=true npm run build",
   "outputDirectory": "build",
   "installCommand": "npm install",
+  "env": {
+    "DISABLE_ESLINT_PLUGIN": "true",
+    "GENERATE_SOURCEMAP": "false"
+  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
