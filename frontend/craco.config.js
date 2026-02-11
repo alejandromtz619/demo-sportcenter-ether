@@ -61,6 +61,13 @@ const webpackConfig = {
         ],
       };
 
+      // Disable ForkTsCheckerWebpackPlugin in production build to avoid ajv conflicts
+      if (!isDevServer) {
+        webpackConfig.plugins = webpackConfig.plugins.filter(
+          plugin => !(plugin.constructor && plugin.constructor.name === 'ForkTsCheckerWebpackPlugin')
+        );
+      }
+
       // Add health check plugin to webpack if enabled
       if (config.enableHealthCheck && healthPluginInstance) {
         webpackConfig.plugins.push(healthPluginInstance);
