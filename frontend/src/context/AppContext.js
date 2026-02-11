@@ -33,6 +33,17 @@ export const AppProvider = ({ children }) => {
     setCurrentUser(role === 'manager' ? demoUsers.manager : demoUsers.client);
   }, []);
 
+  // Add notification - Declared first to avoid circular dependency
+  const addNotification = useCallback((notification) => {
+    const newNotification = {
+      ...notification,
+      id: `notif-${Date.now()}`,
+      timestamp: new Date().toISOString(),
+      read: false
+    };
+    setNotifications(prev => [newNotification, ...prev]);
+  }, []);
+
   // Add new booking
   const addBooking = useCallback((booking) => {
     const newBooking = {
@@ -51,7 +62,7 @@ export const AppProvider = ({ children }) => {
     });
     
     return newBooking;
-  }, []);
+  }, [addNotification]);
 
   // Update booking status
   const updateBookingStatus = useCallback((bookingId, newStatus) => {
@@ -90,23 +101,12 @@ export const AppProvider = ({ children }) => {
     });
     
     return newReview;
-  }, []);
+  }, [addNotification]);
 
   // Get reviews for court
   const getCourtReviews = useCallback((courtId) => {
     return reviews.filter(r => r.courtId === courtId);
   }, [reviews]);
-
-  // Add notification
-  const addNotification = useCallback((notification) => {
-    const newNotification = {
-      ...notification,
-      id: `notif-${Date.now()}`,
-      timestamp: new Date().toISOString(),
-      read: false
-    };
-    setNotifications(prev => [newNotification, ...prev]);
-  }, []);
 
   // Mark notification as read
   const markNotificationRead = useCallback((notifId) => {
