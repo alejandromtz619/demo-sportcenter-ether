@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { AppProvider, useApp } from './context/AppContext';
 import Navbar from './components/Navbar';
-import HomePage from './pages/HomePage';
-import CourtsPage from './pages/CourtsPage';
-import CourtDetailPage from './pages/CourtDetailPage';
-import ClientHistoryPage from './pages/ClientHistoryPage';
-import ManagerDashboard from './pages/ManagerDashboard';
 import './App.css';
+
+// Lazy load pages for better performance
+const HomePage = lazy(() => import('./pages/HomePage'));
+const CourtsPage = lazy(() => import('./pages/CourtsPage'));
+const CourtDetailPage = lazy(() => import('./pages/CourtDetailPage'));
+const ClientHistoryPage = lazy(() => import('./pages/ClientHistoryPage'));
+const ManagerDashboard = lazy(() => import('./pages/ManagerDashboard'));
+
+// Loading component
+const LoadingFallback = () => (
+  <div className="min-h-screen bg-[#050505] flex items-center justify-center">
+    <div className="w-16 h-16 border-4 border-neon border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 // Protected route for manager
 const ManagerRoute = ({ children }) => {
@@ -38,7 +47,8 @@ const AppContent = () => {
   return (
     <div className="App min-h-screen bg-[#050505]">
       <Navbar />
-      <Routes>
+      <Suspense fallback={<LoadingFallback />}>
+        <Routes>
         {/* Public routes */}
         <Route 
           path="/" 
@@ -64,7 +74,8 @@ const AppContent = () => {
         
         {/* Catch all - redirect to home */}
         <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+        </Routes>
+      </Suspense>
       
       <Toaster 
         position="top-right"

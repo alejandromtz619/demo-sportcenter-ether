@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Star, User } from 'lucide-react';
 
 const ReviewCard = ({ review }) => {
@@ -47,4 +47,4 @@ const ReviewCard = ({ review }) => {
   );
 };
 
-export default ReviewCard;
+export default memo(ReviewCard);

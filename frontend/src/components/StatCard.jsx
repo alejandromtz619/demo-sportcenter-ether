@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { cn } from '../lib/utils';
 
 const StatCard = ({ 
@@ -57,4 +57,4 @@ const StatCard = ({
   );
 };
 
-export default StatCard;
+export default memo(StatCard);

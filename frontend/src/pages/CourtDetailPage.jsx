@@ -179,6 +179,7 @@ const CourtDetailPage = () => {
         <img
           src={court.image}
           alt={court.name}
+          loading="eager"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />

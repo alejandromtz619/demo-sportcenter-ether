@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { cn } from '../lib/utils';
 import { Clock } from 'lucide-react';
 
@@ -85,4 +85,4 @@ const TimeSlotPicker = ({
   );
 };
 
-export default TimeSlotPicker;
+export default memo(TimeSlotPicker);

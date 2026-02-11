@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback, useMemo } from 'react';
 import { 
   initialBookings, 
   initialReviews, 
@@ -55,19 +55,19 @@ export const AppProvider = ({ children }) => {
 
   // Update booking status
   const updateBookingStatus = useCallback((bookingId, newStatus) => {
-    setBookings(prev => 
-      prev.map(b => b.id === bookingId ? { ...b, status: newStatus } : b)
-    );
-    
-    const booking = bookings.find(b => b.id === bookingId);
-    if (booking) {
-      addNotification({
-        type: 'booking',
-        title: 'Estado actualizado',
-        message: `Reserva de ${booking.clientName} actualizada a ${newStatus}`
-      });
-    }
-  }, [bookings]);
+    setBookings(prev => {
+      const updated = prev.map(b => b.id === bookingId ? { ...b, status: newStatus } : b);
+      const booking = updated.find(b => b.id === bookingId);
+      if (booking) {
+        addNotification({
+          type: 'booking',
+          title: 'Estado actualizado',
+          message: `Reserva de ${booking.clientName} actualizada a ${newStatus}`
+        });
+      }
+      return updated;
+    });
+  }, [addNotification]);
 
   // Cancel booking
   const cancelBooking = useCallback((bookingId) => {
@@ -175,7 +175,7 @@ export const AppProvider = ({ children }) => {
     });
   }, [bookings]);
 
-  const value = {
+  const value = useMemo(() => ({
     userRole,
     currentUser,
     bookings,
@@ -194,7 +194,26 @@ export const AppProvider = ({ children }) => {
     getClientBookings,
     getDashboardStats,
     isSlotAvailable
-  };
+  }), [
+    userRole,
+    currentUser,
+    bookings,
+    reviews,
+    notifications,
+    switchRole,
+    addBooking,
+    updateBookingStatus,
+    cancelBooking,
+    addReview,
+    getCourtReviews,
+    addNotification,
+    markNotificationRead,
+    markAllNotificationsRead,
+    getUnreadCount,
+    getClientBookings,
+    getDashboardStats,
+    isSlotAvailable
+  ]);
 
   return (
     <AppContext.Provider value={value}>

@@ -43,6 +43,7 @@ const HomePage = () => {
           <img
             src="https://images.unsplash.com/photo-1676655079738-af54dfd6318e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxhdGhsZXRlJTIwc2lsaG91ZXR0ZSUyMGRhcmslMjBneW18ZW58MHx8fHwxNzcwNDE5NzQ1fDA&ixlib=rb-4.1.0&q=85"
             alt="Hero background"
+            loading="eager"
             className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, Clock, MapPin } from 'lucide-react';
 import { Badge } from './ui/badge';
@@ -31,6 +31,7 @@ const CourtCard = ({ court, variant = 'default' }) => {
           <img
             src={court.image}
             alt={court.name}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
@@ -77,6 +78,7 @@ const CourtCard = ({ court, variant = 'default' }) => {
         <img
           src={court.image}
           alt={court.name}
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -115,4 +117,4 @@ const CourtCard = ({ court, variant = 'default' }) => {
   );
 };
 
-export default CourtCard;
+export default memo(CourtCard);

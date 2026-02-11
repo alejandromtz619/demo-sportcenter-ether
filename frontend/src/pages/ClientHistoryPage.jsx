@@ -92,6 +92,7 @@ const ClientHistoryPage = () => {
             <img
               src={getCourtImage(booking.courtId)}
               alt={booking.courtName}
+              loading="lazy"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/80 md:hidden" />
